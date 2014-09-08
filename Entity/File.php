@@ -12,24 +12,34 @@
 namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
+use Silvestra\Component\Media\Model\File as BaseFile;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
  *
- * @since 9/7/14 12:36 PM
+ * @since 9/8/14 4:58 PM
  */
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="silvestra_users")
+ * @ORM\Table(name="silvestra_files")
  */
-class User extends BaseUser
+class File extends BaseFile
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    protected $id;
+    private $id;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

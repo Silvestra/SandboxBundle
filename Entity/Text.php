@@ -13,8 +13,8 @@ namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use Tadcka\TextBundle\Model\Text as BaseText;
-use Tadcka\TextBundle\Model\TextTranslationInterface;
+use Silvestra\Component\Text\Model\Text as BaseText;
+use Silvestra\Component\Text\Model\TextTranslationInterface;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
@@ -28,6 +28,15 @@ use Tadcka\TextBundle\Model\TextTranslationInterface;
  */
 class Text extends BaseText
 {
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
     /**
      * @var ArrayCollection|TextTranslationInterface[]
      *
@@ -47,6 +56,14 @@ class Text extends BaseText
         parent::__construct();
 
         $this->translations = new ArrayCollection();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     /**

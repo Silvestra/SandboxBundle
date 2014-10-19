@@ -12,7 +12,7 @@
 namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Tadcka\TextBundle\Model\TextTranslation as BaseTextTranslation;
+use Silvestra\Component\Text\Model\TextTranslation as BaseTextTranslation;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>
@@ -30,8 +30,25 @@ use Tadcka\TextBundle\Model\TextTranslation as BaseTextTranslation;
 class TextTranslation extends BaseTextTranslation
 {
     /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Silvestra\Bundle\SandboxBundle\Entity\Text", inversedBy="translations")
      * @ORM\JoinColumn(name="text_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
      */
     protected $text;
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }

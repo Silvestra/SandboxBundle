@@ -14,6 +14,7 @@ namespace Silvestra\Bundle\SandboxBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Silvestra\Component\Seo\Model\SeoMetadataInterface;
 use Tadcka\Bundle\SitemapBundle\Model\TreeInterface;
 use Tadcka\Component\Tree\Model\NodeInterface;
 use Tadcka\Component\Tree\Model\NodeTranslationInterface;
@@ -88,6 +89,14 @@ class Node extends BaseNode
     protected $tree;
 
     /**
+     * @var SeoMetadataInterface[]
+     *
+     * @ORM\ManyToMany(targetEntity="Silvestra\Bundle\SandboxBundle\Entity\SeoMetadata")
+     * @ORM\JoinTable(name="silvestra_sitemap_node_seo_metadata")
+     */
+    protected $seoMetadata;
+
+    /**
      * Constructor.
      */
     public function __construct()
@@ -96,6 +105,7 @@ class Node extends BaseNode
 
         $this->children = new ArrayCollection();
         $this->translations = new ArrayCollection();
+        $this->seoMetadata = new ArrayCollection();
     }
 
     /**
@@ -136,5 +146,13 @@ class Node extends BaseNode
     public function removeTranslation(NodeTranslationInterface $translation)
     {
         $this->translations->removeElement($translation);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeSeoMetadata(SeoMetadataInterface $seoMetadata)
+    {
+        $this->seoMetadata->removeElement($seoMetadata);
     }
 }

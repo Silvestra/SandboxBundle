@@ -12,7 +12,7 @@
 namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Silvestra\Bundle\TextNodeBundle\Model\TextNode as BaseTextNode;
+use Silvestra\Bundle\Text\NodeBundle\Model\TextNode as BaseTextNode;
 use Tadcka\Bundle\SitemapBundle\Model\NodeInterface;
 
 /**

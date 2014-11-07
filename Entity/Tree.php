@@ -13,7 +13,7 @@ namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
-use Tadcka\Bundle\SitemapBundle\Model\Tree as BaseTree;
+use Tadcka\Component\Tree\Model\Tree as BaseTree;
 use Tadcka\Component\Tree\Model\NodeInterface;
 
 /**

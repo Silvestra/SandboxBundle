@@ -12,7 +12,7 @@
 namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Tadcka\Bundle\RoutingBundle\Model\Route as BaseRoute;
+use Tadcka\Component\Routing\Model\Route as BaseRoute;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>

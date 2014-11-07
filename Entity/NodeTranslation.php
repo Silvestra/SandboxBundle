@@ -13,8 +13,8 @@ namespace Silvestra\Bundle\SandboxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Tadcka\Component\Tree\Model\NodeInterface;
-use Tadcka\Bundle\RoutingBundle\Model\RouteInterface;
-use Tadcka\Bundle\SitemapBundle\Model\NodeTranslation as BaseNodeTranslation;
+use Tadcka\Component\Routing\Model\RouteInterface;
+use Tadcka\Component\Tree\Model\NodeTranslation as BaseNodeTranslation;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>

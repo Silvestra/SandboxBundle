@@ -15,10 +15,10 @@ use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Silvestra\Component\Seo\Model\SeoMetadataInterface;
-use Tadcka\Bundle\SitemapBundle\Model\TreeInterface;
+use Tadcka\Component\Tree\Model\TreeInterface;
 use Tadcka\Component\Tree\Model\NodeInterface;
 use Tadcka\Component\Tree\Model\NodeTranslationInterface;
-use Tadcka\Bundle\SitemapBundle\Model\Node as BaseNode;
+use Tadcka\Component\Tree\Model\Node as BaseNode;
 
 /**
  * @author Tadas Gliaubicas <tadcka89@gmail.com>

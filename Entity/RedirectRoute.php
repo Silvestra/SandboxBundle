@@ -52,4 +52,3 @@ class RedirectRoute extends BaseRedirectRoute
         return $this->id;
     }
 }
- 

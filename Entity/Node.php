@@ -41,7 +41,7 @@ class Node extends BaseNode
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var NodeInterface
